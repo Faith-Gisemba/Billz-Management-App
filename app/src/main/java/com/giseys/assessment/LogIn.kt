@@ -24,14 +24,14 @@ class LogIn : AppCompatActivity() {
 
 
     fun validate() {
-        val FullName = binding.etFullName.text.toString()
-        val Email = binding.etPhone.text.toString()
+        val UserName = binding.etUserName.text.toString()
         val Email = binding.etEmail.text.toString()
-        val PassWord = binding.etPassWord.text.toString()
+        val Phone = binding.etPhone.text.toString()
+        val PassWord = binding.etPassword.text.toString()
         var error = false
 
-        if (FullName.isBlank()) {
-            binding.tilFullName.error = "Full name is required"
+        if (UserName.isBlank()) {
+            binding.tilUserName.error = "User name is required"
             error = true
         }
         if (Phone.isBlank()) {
@@ -43,12 +43,12 @@ class LogIn : AppCompatActivity() {
             error = true
         }
         if (PassWord.isBlank()) {
-            binding.tilPassWord.error = "PassWord is required"
+            binding.tilPassword.error = "PassWord is required"
             error = true
         }
         if (!error) {
             Toast
-                .makeText(this, "$FullName $Phone $Email", Toast.LENGTH_LONG)
+                .makeText(this, "$UserName $Phone $Email", Toast.LENGTH_LONG)
                 .show()
 
         }
@@ -56,10 +56,10 @@ class LogIn : AppCompatActivity() {
 
 
     fun clearError() {
-        binding.tilFullName.error = null
+        binding.tilUserName.error = null
         binding.tilPhone.error = null
         binding.tilEmail.error = null
-        binding.tilPassWord.error = null
+        binding.tilPassword.error = null
 
     }
 }
