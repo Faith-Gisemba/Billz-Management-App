@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#2A43D1"
+    tools:context=".HomePage">
+
+    <TextView
+        android:id="@+id/tilWel"
+        android:layout_width="372dp"
+        android:layout_height="127dp"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="68dp"
+        android:layout_marginEnd="10dp"
+        android:text="Welcome to Billz "
+        android:textColor="@color/white"
+        android:fontFamily="@font/imprima"
+        android:textSize="32sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/ivBills"
+        android:layout_width="427dp"
+        android:layout_height="502dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginBottom="250dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tilWel"
+        app:layout_constraintVertical_bias="0.597"
+        app:srcCompat="@drawable/bills2" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
