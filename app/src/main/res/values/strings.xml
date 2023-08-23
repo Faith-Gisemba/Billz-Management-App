@@ -19,4 +19,11 @@
     <string name="confirm_password">Confirm PassWord</string>
     <string name="already_a_member">Already a member?</string>
     <string name="Log_in">Log In</string>
+    <string-array name="frequencies">
+        <item>Weekly</item>
+        <item>Monthly</item>
+        <item>Quarterly</item>
+        <item>Annual</item>
+
+    </string-array>
 </resources>

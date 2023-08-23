@@ -7,7 +7,6 @@ import com.giseys.assessment.databinding.ActivityHomeBinding
 import ui.PaidBillFragment
 import ui.SummaryFragment
 import ui.UpcomingBillFragment
-import ui.settingsFragment
 
 class HomeActivity : AppCompatActivity() {
     lateinit var binding: ActivityHomeBinding
@@ -41,7 +40,7 @@ class HomeActivity : AppCompatActivity() {
                 R.id.paid ->{
                     supportFragmentManager
                         .beginTransaction()
-                        .replace(R.id.fcvHome, settingsFragment())
+                        .replace(R.id.fcvHome, SettingFragment())
                         .commit()
                     true
 
