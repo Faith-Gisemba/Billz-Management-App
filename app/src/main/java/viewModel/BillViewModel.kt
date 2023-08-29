@@ -1,6 +1,7 @@
 package viewModel
 
 import Repository.model.BillRepository
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.launch
@@ -15,6 +16,7 @@ class BillViewModel: ViewModel() {
         }
 
     }
-
-
+    fun getAllBills(): LiveData<List<Bill>> {
+        return billRepo.getAllBills()
+    }
 }

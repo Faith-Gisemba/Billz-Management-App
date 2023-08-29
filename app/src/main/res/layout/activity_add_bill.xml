@@ -3,28 +3,31 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     tools:context="ui.AddBillActivity">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/tbaddbill"
-        android:layout_width="409dp"
-        android:layout_height="wrap_content"
-        android:background="?attr/colorPrimary"
+        android:layout_width="430dp"
+        android:layout_height="85dp"
+        android:background="@color/icecold"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" >
+        app:layout_constraintTop_toTopOf="parent">
+
         <TextView
             android:id="@+id/tvtitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/app_name"
-            android:textSize="20sp"
+            android:fontFamily="@font/imprima"
+            android:text="Add Bill"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="30sp"
             tools:layout_editor_absoluteX="69dp"
-            tools:layout_editor_absoluteY="17dp"
-            android:textColor="@color/white"/>
+            tools:layout_editor_absoluteY="17dp" />
 
     </androidx.appcompat.widget.Toolbar>
 
@@ -38,7 +41,7 @@
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextText4" />
+        app:layout_constraintTop_toBottomOf="@+id/etAmount" />
 
     <Spinner
         android:id="@+id/spfrequency"
@@ -76,20 +79,8 @@
         app:layout_constraintStart_toEndOf="@+id/textView7"
         app:layout_constraintTop_toTopOf="@+id/textView7" />
 
-    <Button
-        android:id="@+id/button3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:layout_marginBottom="197dp"
-        android:text="Save Bill"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinner2" />
-
     <EditText
-        android:id="@+id/editTextText3"
+        android:id="@+id/etName"
         android:layout_width="381dp"
         android:layout_height="66dp"
         android:layout_marginStart="16dp"
@@ -102,8 +93,21 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tbaddbill" />
 
+    <DatePicker
+        android:id="@+id/dpDueDateAnnual"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="48dp"
+        android:layout_marginEnd="411dp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
+
+
     <EditText
-        android:id="@+id/editTextText4"
+        android:id="@+id/etAmount"
         android:layout_width="379dp"
         android:layout_height="58dp"
         android:layout_marginStart="16dp"
@@ -114,7 +118,33 @@
         android:text="Amount"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextText3" />
+        app:layout_constraintTop_toBottomOf="@+id/etName" />
+
+    <Button
+        android:id="@+id/btnSaveBill"
+        android:layout_width="145dp"
+        android:layout_height="65dp"
+        android:layout_marginStart="159dp"
+        android:layout_marginTop="48dp"
+        android:layout_marginEnd="150dp"
+        android:layout_marginBottom="240dp"
+        android:background="@drawable/round_btn"
+        android:text="Save Bill"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinner2" />
+
+    <FrameLayout
+        android:id="@+id/fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnSaveBill"/>
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

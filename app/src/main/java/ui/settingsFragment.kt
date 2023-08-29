@@ -13,8 +13,6 @@ import com.giseys.assessment.R
 import utils.Constant
 
 class SettingFragment : Fragment() {
-
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -22,17 +20,11 @@ class SettingFragment : Fragment() {
 
         val view = inflater.inflate(R.layout.fragment_settings, container, false)
         val logout = view.findViewById<ImageView>(R.id.ivLog)
-
         logout.setOnClickListener {
-
             performLogout()
         }
-
         return view
-        // Inflate the layout for this fragment
-
     }
-
     private fun performLogout() {
         val sharedPrefs = requireActivity().getSharedPreferences(Constant.PREFS, Context.MODE_PRIVATE)
 

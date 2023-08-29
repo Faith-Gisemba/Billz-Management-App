@@ -17,7 +17,8 @@ class BillRepository {
         }
 
     }
-
-
+    fun getAllBills(): LiveData<List<Bill>> {
+        return billDao.getAllBills()
+    }
 
 }

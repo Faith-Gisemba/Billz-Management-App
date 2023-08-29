@@ -1,4 +1,5 @@
 package model
+//e data structure for making a registration request to some API endpoint
 
 import com.google.gson.annotations.SerializedName
 
@@ -8,6 +9,4 @@ data class RegisterRequest(
     var email : String,
     var password : String,
     @SerializedName("phone_number") var phone_number : String,
-
-
 )

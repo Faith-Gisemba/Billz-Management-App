@@ -11,11 +11,15 @@ import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.lifecycle.Observer
 import com.giseys.assessment.databinding.ActivityLogInBinding
+import com.giseys.assessment.databinding.ActivityMainBinding
 import viewModel.UserViewModel
 
 class logIn : AppCompatActivity() {
     lateinit var binding: ActivityLogInBinding
     lateinit var ivBack : ActivityLogInBinding
+    lateinit var btnLogIn: ActivityLogInBinding
+    lateinit var btnRegister: ActivityLogInBinding
+
     val UserViewModel: UserViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -26,11 +30,20 @@ class logIn : AppCompatActivity() {
 
     override fun onResume() {
         super.onResume()
-        binding.btnLogIn.setOnClickListener {
-            validate()
-        }
+        validate()
+//        binding.btnLogIn.setOnClickListener {
+//            validate()
+//        }
         binding.ivBack.setOnClickListener {
+            val intent = Intent(this,MainActivity::class.java)
+            startActivity(intent)
+        }
+        binding.btnLogIn.setOnClickListener {
             val intent = Intent(this,HomeActivity::class.java)
+            startActivity(intent)
+        }
+        binding.btnRegister.setOnClickListener {
+            val intent = Intent(this,MainActivity::class.java)
             startActivity(intent)
         }
 

@@ -5,15 +5,20 @@
     android:layout_height="match_parent"
     tools:context="ui.SummaryFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:id="@+id/textView5"
+    <ListView
+        android:id="@+id/listViewBills"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="summary"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="70dp"
+        android:divider="@color/white"
+        android:dividerHeight="1dp"
+        android:background="@color/lighty"
+        app:layout_constraintBottom_toTopOf="@id/ivAddFra"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
     <ImageView
         android:id="@+id/ivAddFra"
@@ -29,4 +34,36 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.984" />
 
+    <TextView
+        android:id="@+id/tvAdded"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="166dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="175dp"
+        android:fontFamily="@font/imprima"
+        android:text="Added Bills"
+        android:textColor="@color/icecold"
+        android:textFontWeight="600"
+        android:textSize="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.445"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="40dp"
+        android:layout_height="38dp"
+        android:layout_marginStart="77dp"
+        android:layout_marginTop="13dp"
+        android:layout_marginEnd="16dp"
+        android:src="@drawable/baseline_circle_notifications_24"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tvAdded"
+        app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+

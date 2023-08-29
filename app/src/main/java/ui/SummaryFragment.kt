@@ -6,17 +6,38 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 import com.giseys.assessment.R
 import com.giseys.assessment.databinding.FragmentSummaryBinding
+import viewModel.BillViewModel
+import viewModel.UserViewModel
 
 class SummaryFragment : Fragment() {
-    var _binding: FragmentSummaryBinding? = null
-    private val binding get() = _binding
+    var binding: FragmentSummaryBinding? = null
+
+    private lateinit var billsViewModel: BillViewModel
+    private lateinit var adapter: BillsAdapter
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        billsViewModel = ViewModelProvider(requireActivity()).get(BillViewModel::class.java)
+        adapter = BillsAdapter(requireContext(), R.layout.item_bill, mutableListOf())
+        binding?.listViewBills?.adapter = adapter
+        billsViewModel.getAllBills().observe(viewLifecycleOwner, Observer { bills ->
+            adapter.clear()
+            adapter.addAll(bills)
+            adapter.notifyDataSetChanged()
+        })
+        binding?.ivAddFra?.setOnClickListener {
+            startActivity(Intent(requireContext(), AddBillActivity::class.java))
+        }
+    }
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding = FragmentSummaryBinding.inflate(inflater, container, false)
+        binding = FragmentSummaryBinding.inflate(inflater, container, false)
         return binding?.root
     }
 
@@ -28,10 +49,13 @@ class SummaryFragment : Fragment() {
         }
     }
 
-    override fun onDestroy() {
-        super.onDestroy()
-        _binding= null
+    override fun onDestroyView() {
+        super.onDestroyView()
+        binding= null
     }
 
 
 }
+
+
+
