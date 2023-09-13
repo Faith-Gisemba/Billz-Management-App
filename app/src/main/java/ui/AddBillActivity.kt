@@ -10,6 +10,7 @@ import androidx.activity.viewModels
 import com.giseys.assessment.R
 import com.giseys.assessment.databinding.ActivityAddBillBinding
 import model.Bill
+import utils.Constant
 import viewModel.BillViewModel
 import java.util.Objects
 import java.util.UUID
@@ -55,13 +56,27 @@ class AddBillActivity : AppCompatActivity() {
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         binding.spfrequency.adapter = adapter
     }
-
+    fun View.show(){
+        this.visibility = View.VISIBLE
+    }
+    fun View.hide(){
+        this.visibility = View.GONE
+    }
     private fun setDueDateSpinner() {
         binding.spfrequency.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
                 val selectedFrequency = binding.spfrequency.selectedItem.toString()
 
                 val dueDateAdapter = when (binding.spfrequency.selectedItem.toString()) {
+                    "Weekly" -> {
+                        val daysInWeek = 1..7
+                        ArrayAdapter(
+                            this@AddBillActivity,
+                            android.R.layout.simple_spinner_item,
+                            daysInWeek.toList()
+                        )
+                    }
+
                     "Monthly" -> {
                         val daysInMonth = 1..31
                         ArrayAdapter(
@@ -81,12 +96,14 @@ class AddBillActivity : AppCompatActivity() {
                     }
 
                     "Annual" -> {
+                        binding.spfrequency.visibility = View.GONE
+                        binding.dpDueDateAnnual.visibility = View.VISIBLE
                         val daysInYear = 1..365
                         ArrayAdapter(
                             this@AddBillActivity,
                             android.R.layout.simple_spinner_item,
-                            daysInYear.toList()
                         )
+
                     }
 
                     else -> {
@@ -105,8 +122,6 @@ class AddBillActivity : AppCompatActivity() {
             override fun onNothingSelected(parent: AdapterView<*>?) {
 
             }
-
-
         }
     }
 
@@ -118,6 +133,7 @@ class AddBillActivity : AppCompatActivity() {
         transaction.commit()
 
     }
+
 }
 
 

@@ -93,18 +93,22 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tbaddbill" />
 
+
     <DatePicker
         android:id="@+id/dpDueDateAnnual"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="48dp"
-        android:layout_marginEnd="411dp"
+        android:layout_width="255dp"
+        android:layout_height="240dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
         android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@id/btnSaveBill"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/spfrequency"
+        app:layout_constraintVertical_bias="1.0"
         tools:ignore="MissingConstraints" />
-
 
     <EditText
         android:id="@+id/etAmount"
@@ -125,14 +129,13 @@
         android:layout_width="145dp"
         android:layout_height="65dp"
         android:layout_marginStart="159dp"
-        android:layout_marginTop="48dp"
+        android:layout_marginTop="248dp"
         android:layout_marginEnd="150dp"
-        android:layout_marginBottom="240dp"
         android:background="@drawable/round_btn"
         android:text="Save Bill"
         android:textColor="@color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/spinner2" />
 
@@ -142,9 +145,10 @@
         android:layout_height="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btnSaveBill"/>
-
+        app:layout_constraintTop_toBottomOf="@id/btnSaveBill"
+        app:layout_constraintVertical_bias="0.938" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -19,4 +19,12 @@ class BillViewModel: ViewModel() {
     fun getAllBills(): LiveData<List<Bill>> {
         return billRepo.getAllBills()
     }
+
+    fun createRecurringBills(){
+        viewModelScope.launch {
+            billRepo.createRecurringMonthlyBills()
+            billRepo.createRecurringWeeklyBills()
+        }
+    }
+
 }

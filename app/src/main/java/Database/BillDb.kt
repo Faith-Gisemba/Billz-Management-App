@@ -8,11 +8,13 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import model.Bill
+import model.upcomingBill
 
-@Database(entities = [Bill :: class], version = 1)
+@Database(entities = [Bill :: class, upcomingBill::class], version = 2)
 abstract class BillDb: RoomDatabase() {
 
     abstract fun billDao(): BillDao
+    abstract fun upcomingBillsDao(): upcomingBillDao
     companion object{
         var database : BillDb? = null
         fun getDataBase(context: Context): BillDb{
