@@ -20,16 +20,16 @@
             android:name=".authorize"
             android:exported="false" />
         <activity
-            android:name="ui.AddBillActivity"
+            android:name=".ui.AddBillActivity"
             android:exported="false" />
         <activity
-            android:name="ui.HomeActivity"
+            android:name=".ui.HomeActivity"
             android:exported="false" />
         <activity
-            android:name="ui.logIn"
+            android:name=".ui.logIn"
             android:exported="false" />
         <activity
-            android:name="ui.MainActivity"
+            android:name=".ui.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
